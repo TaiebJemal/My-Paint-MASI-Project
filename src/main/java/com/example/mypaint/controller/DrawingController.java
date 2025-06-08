@@ -38,6 +38,9 @@ public class DrawingController {
             log("Shape selected: Line");
         });
 
+        System.out.println(view.getSelectedStrokeColor());
+        System.out.println(view.getSelectedFillColor());
+
         view.getDrawingPane().setOnMousePressed(this::handleMousePressed);
         view.getDrawingPane().setOnMouseReleased(this::handleMouseReleased);
 

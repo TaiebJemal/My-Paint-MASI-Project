@@ -23,42 +23,43 @@ public class DrawingView {
         drawingPane.setPrefHeight(500);
 
         rectangleButton = new Button("Rectangle");
-        circleButton = new Button("Circle");
-        lineButton = new Button("Line");
+        circleButton = new Button("Cercle");
+        lineButton = new Button("Ligne");
 
-        toggleLogButton = new Button("Logging View");
+        toggleLogButton = new Button("Logging");
 
         fillColorBox = new ComboBox<>();
         strokeColorBox = new ComboBox<>();
 
-        addColorOption(fillColorBox, "Red", Color.web("#FF0000"));
-        addColorOption(fillColorBox, "Blue", Color.web("#0000FF"));
-        addColorOption(fillColorBox, "Green", Color.web("#00FF00"));
-        addColorOption(fillColorBox, "Yellow", Color.web("#FFFF00"));
-        addColorOption(fillColorBox, "Black", Color.web("#000000"));
-        addColorOption(fillColorBox, "White", Color.web("#FFFFFF"));
+
+        addColorOption(fillColorBox, "Rouge", Color.web("#FF0000"));
+        addColorOption(fillColorBox, "Bleu", Color.web("#0000FF"));
+        addColorOption(fillColorBox, "Vert", Color.web("#00FF00"));
+        addColorOption(fillColorBox, "Jaune", Color.web("#FFFF00"));
+        addColorOption(fillColorBox, "Noir", Color.web("#000000"));
+        addColorOption(fillColorBox, "Blanc", Color.web("#FFFFFF"));
         addColorOption(fillColorBox, "Cyan", Color.web("#00FFFF"));
         addColorOption(fillColorBox, "Magenta", Color.web("#FF00FF"));
-        addColorOption(fillColorBox, "Gray", Color.web("#808080"));
+        addColorOption(fillColorBox, "Gris", Color.web("#808080"));
         addColorOption(fillColorBox, "Orange", Color.web("#FFA500"));
 
-        addColorOption(strokeColorBox, "Red", Color.web("#FF0000"));
-        addColorOption(strokeColorBox, "Blue", Color.web("#0000FF"));
-        addColorOption(strokeColorBox, "Green", Color.web("#00FF00"));
-        addColorOption(strokeColorBox, "Yellow", Color.web("#FFFF00"));
-        addColorOption(strokeColorBox, "Black", Color.web("#000000"));
-        addColorOption(strokeColorBox, "White", Color.web("#FFFFFF"));
+        addColorOption(strokeColorBox, "Rouge", Color.web("#FF0000"));
+        addColorOption(strokeColorBox, "Bleu", Color.web("#0000FF"));
+        addColorOption(strokeColorBox, "Vert", Color.web("#00FF00"));
+        addColorOption(strokeColorBox, "Jaune", Color.web("#FFFF00"));
+        addColorOption(strokeColorBox, "Noir", Color.web("#000000"));
+        addColorOption(strokeColorBox, "Blanc", Color.web("#FFFFFF"));
         addColorOption(strokeColorBox, "Cyan", Color.web("#00FFFF"));
         addColorOption(strokeColorBox, "Magenta", Color.web("#FF00FF"));
-        addColorOption(strokeColorBox, "Gray", Color.web("#808080"));
+        addColorOption(strokeColorBox, "Gris", Color.web("#808080"));
         addColorOption(strokeColorBox, "Orange", Color.web("#FFA500"));
 
         fillColorBox.getSelectionModel().select(0);
-        strokeColorBox.getSelectionModel().select(4);
+        strokeColorBox.getSelectionModel().select(0);
 
         HBox colorBox = new HBox(10,
-                new Label("Fill Color:"), fillColorBox,
-                new Label("Stroke Color:"), strokeColorBox);
+                new Label("Couleur de remplissage:"), fillColorBox,
+                new Label("Couleur de contour:"), strokeColorBox);
         colorBox.setPadding(new Insets(5));
 
         toolBar = new ToolBar(toggleLogButton, rectangleButton, circleButton, lineButton);
@@ -80,7 +81,7 @@ public class DrawingView {
 
     private void addColorOption(ComboBox<HBox> comboBox, String name, Color color) {
         Rectangle swatch = new Rectangle(15, 15, color);
-        Label label = new Label(name + " (" + color.toString() + ")");
+        Label label = new Label(name);
         HBox item = new HBox(5, swatch, label);
         item.setUserData(color);
         comboBox.getItems().add(item);

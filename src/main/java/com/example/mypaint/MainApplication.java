@@ -11,8 +11,8 @@ public class MainApplication extends Application {
     public void start(Stage stage) {
         DrawingView view = new DrawingView();
         new DrawingController(view);
-        Scene scene = new Scene(view.getRoot(), 800, 600);
-        stage.setTitle("MyPaint - JavaFX Drawing App");
+        Scene scene = new Scene(view.getRoot(), 1920, 1080);
+        stage.setTitle("MyPaint - Java FX Project");
         stage.setScene(scene);
         stage.show();
     }
